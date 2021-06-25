@@ -37,10 +37,10 @@ def worldview(request):
                 deaths = int(total) - int(critical) - int(recovered)
                 now1 = timezone.now()
         context = {'selectedcountry':selectedcountry,'mylist':mylist,'new':new,'active':active,'critical':critical,'death':deaths,'recovered':recovered,'total':total,'now1':now1}        
-        return render(request,'world.html',context)
+        return render(request,'index.html',context)
     
     mylist=[]
     for i in range(noofresults):
         mylist.append(response['response'][i]['country'])
     cont={'mylist':mylist}
-    return render(request,'world.html',cont)
+    return render(request,'index.html',cont)
